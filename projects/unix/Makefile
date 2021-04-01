@@ -699,7 +699,6 @@ ifeq ($(OPENCV), 1)
   CFLAGS += -DM64P_OPENCV
 endif
 
-
 # generate a list of object files to build, make a temporary directory for them
 OBJECTS := $(patsubst $(SRCDIR)/%.c,   $(OBJDIR)/%.o, $(filter $(SRCDIR)/%.c,   $(SOURCE)))
 OBJECTS += $(patsubst $(SUBDIR)/%.c,   $(OBJDIR)/subprojects/%.o, $(filter $(SUBDIR)/%.c,   $(SOURCE)))
@@ -710,6 +709,8 @@ OBJECTS += $(patsubst $(SRCDIR)/%.S, $(OBJDIR)/%.o, $(filter %.S, $(SOURCE)))
 OBJECTS += $(patsubst $(SRCDIR)/%.asm, $(OBJDIR)/%.o, $(filter %.asm, $(SOURCE)))
 OBJDIRS = $(dir $(OBJECTS))
 $(shell $(MKDIR) $(OBJDIRS))
+
+include ../../libRetroReversing/Makefile.retroreversing
 
 # we have a special object file for the new dynarec
 ASM_DEFINES_OBJ = $(OBJDIR)/asm_defines/asm_defines.o
