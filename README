@@ -1,3 +1,12 @@
+NOTE:
+-----
+
+This repo is a fork of Mupen64Plus that has the additional changes for the 
+Mupen64Plus Reverser's Edition (https://github.com/RetroReversing/mupen64plus-core) 
+on top of latest master.
+It is also referencing a private fork of libRetroReversing that contains additional 
+fixes that make it build on my machine.
+
 Mupen64Plus-Core README
 -----------------------
 

@@ -609,9 +609,13 @@ static int get_saveslot_from_keysym(int keysym)
 * sdl keyup/keydown handlers
 */
 
+
+void cdl_keyevents(int keysym, int keymod);
+
 void event_sdl_keydown(int keysym, int keymod)
 {
     int slot;
+    cdl_keyevents(keysym, keymod);
 
     /* check for the only hard-coded key command: Alt-enter for fullscreen */
     if (keysym == SDL_SCANCODE_RETURN && keymod & (KMOD_LALT | KMOD_RALT))
